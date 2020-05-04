@@ -1,0 +1,701 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.0821.2225                               -->
+<workbook source-build='2019.3.0 (20193.19.0821.2225)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='train' inline='true' name='federated.0ja4wy5148nbfk12mpyvq1r50uxv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='train' name='textscan.1mpn8y31l3chvz16itau104e1yaq'>
+            <connection class='textscan' directory='C:/Users/Cherry/Desktop/RCB/Courses/Big Data Infra/Project/covid19-global-forecasting-week-3' filename='train.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1mpn8y31l3chvz16itau104e1yaq' name='train.csv' table='[train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Id' ordinal='0' />
+            <column datatype='string' name='Province_State' ordinal='1' />
+            <column datatype='string' name='Country_Region' ordinal='2' />
+            <column datatype='date' name='Date' ordinal='3' />
+            <column datatype='real' name='ConfirmedCases' ordinal='4' />
+            <column datatype='real' name='Fatalities' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province_State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Province_State]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Province_State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country_Region]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Country_Region</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ConfirmedCases</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ConfirmedCases]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>ConfirmedCases</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fatalities</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fatalities]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Fatalities</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' caption='Confirmed Cases' datatype='real' name='[ConfirmedCases]' role='dimension' type='ordinal' />
+      <column caption='Country Region' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Province State' datatype='string' name='[Province_State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <drill-paths>
+        <drill-path name='Country_Region, Province_State'>
+          <field>[Province_State]</field>
+          <field>[Country_Region]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.544492' measure-ordering='alphabetic' measure-percentage='0.455508' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='train.csv+ (Multiple Connections)' inline='true' name='federated.0gtxtiz1ape5ha10oqz8b0i3kqg5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='train' name='textscan.05p9frd0mjiky218csxck1kl2tlc'>
+            <connection class='textscan' directory='C:/Users/Cherry/Desktop/RCB/Courses/Big Data Infra/Project/covid19-global-forecasting-week-3' filename='train.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='death-rates-from-air-pollution' name='textscan.13tpxdj1w09fks18j4jg90p2vkau'>
+            <connection class='textscan' directory='C:/Users/Cherry/Desktop/RCB/Courses/Big Data Infra/Project' filename='death-rates-from-air-pollution.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Population' name='textscan.1dcrafb0aswpv60zpvazg1siec5t'>
+            <connection class='textscan' directory='C:/Users/Cherry/Desktop/RCB/Courses/Big Data Infra/Project' filename='Population.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[train.csv].[Country_Region]' />
+              <expression op='[Population.csv].[Country]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[train.csv].[Country_Region]' />
+                <expression op='[death-rates-from-air-pollution.csv].[Entity]' />
+              </expression>
+            </clause>
+            <relation connection='textscan.05p9frd0mjiky218csxck1kl2tlc' name='train.csv' table='[train#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='integer' name='Id' ordinal='0' />
+                <column datatype='string' name='Province_State' ordinal='1' />
+                <column datatype='string' name='Country_Region' ordinal='2' />
+                <column datatype='date' name='Date' ordinal='3' />
+                <column datatype='real' name='ConfirmedCases' ordinal='4' />
+                <column datatype='real' name='Fatalities' ordinal='5' />
+              </columns>
+            </relation>
+            <relation connection='textscan.13tpxdj1w09fks18j4jg90p2vkau' name='death-rates-from-air-pollution.csv' table='[death-rates-from-air-pollution#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='string' name='Entity' ordinal='0' />
+                <column datatype='string' name='Code' ordinal='1' />
+                <column datatype='integer' name='Year' ordinal='2' />
+                <column datatype='real' name='Air pollution (total) (deaths per 100,000)' ordinal='3' />
+                <column datatype='real' name='Indoor air pollution (deaths per 100,000)' ordinal='4' />
+                <column datatype='real' name='Outdoor particulate matter (deaths per 100,000)' ordinal='5' />
+                <column datatype='real' name='Outdoor ozone pollution (deaths per 100,000)' ordinal='6' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.1dcrafb0aswpv60zpvazg1siec5t' name='Population.csv' table='[Population#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Country' ordinal='0' />
+              <column datatype='integer' name='Population' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province_State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Province_State]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Province_State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country_Region]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Country_Region</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ConfirmedCases</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ConfirmedCases]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>ConfirmedCases</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fatalities</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fatalities]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Fatalities</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Entity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Entity]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Entity</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Code]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Code</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Air pollution (total) (deaths per 100,000)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Air pollution (total) (deaths per 100,000)]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Air pollution (total) (deaths per 100,000)</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Indoor air pollution (deaths per 100,000)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Indoor air pollution (deaths per 100,000)]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Indoor air pollution (deaths per 100,000)</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Outdoor particulate matter (deaths per 100,000)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Outdoor particulate matter (deaths per 100,000)]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Outdoor particulate matter (deaths per 100,000)</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Outdoor ozone pollution (deaths per 100,000)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Outdoor ozone pollution (deaths per 100,000)]</local-name>
+            <parent-name>[death-rates-from-air-pollution.csv]</parent-name>
+            <remote-alias>Outdoor ozone pollution (deaths per 100,000)</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Population.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[Population.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[Population.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' hidden='true' name='[Air pollution (total) (deaths per 100,000)]' role='measure' type='quantitative' />
+      <column caption='State' datatype='string' name='[Calculation_764767558389297152]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF ([Province_State] != NULL) THEN [Province_State]&#13;&#10;ELSE [Country_Region] END' />
+      </column>
+      <column datatype='string' hidden='true' name='[Code]' role='dimension' type='nominal' />
+      <column caption='Confirmed Cases' datatype='real' name='[ConfirmedCases]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country Region' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' hidden='true' name='[Entity]' role='dimension' type='nominal' />
+      <column aggregation='Sum' datatype='real' name='[Fatalities]' role='dimension' type='ordinal' />
+      <column datatype='integer' hidden='true' name='[Id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='real' name='[Indoor air pollution (deaths per 100,000)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='Sum' datatype='real' name='[Outdoor ozone pollution (deaths per 100,000)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='real' name='[Outdoor particulate matter (deaths per 100,000)]' role='dimension' type='ordinal' />
+      <column caption='Province State' datatype='string' hidden='true' name='[Province_State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='integer' hidden='true' name='[Year]' role='dimension' type='quantitative' />
+      <drill-paths>
+        <drill-path name='Country_Region, Province_State' />
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.567797' measure-ordering='alphabetic' measure-percentage='0.432203' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Code' />
+        <field-sort-custom-order field='Indoor air pollution (deaths per 100,000)' />
+        <field-sort-custom-order field='Outdoor particulate matter (deaths per 100,000)' />
+        <field-sort-custom-order field='Outdoor ozone pollution (deaths per 100,000)' />
+        <field-sort-custom-order field='Country' />
+        <field-sort-custom-order field='Population' />
+        <field-sort-custom-order field='Id' />
+        <field-sort-custom-order field='Calculation_764767558389297152' />
+        <field-sort-custom-order field='Country_Region' />
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='ConfirmedCases' />
+        <field-sort-custom-order field='Fatalities' />
+      </field-sort-info>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='FCW'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Covid Confirmed Vs Fatalitites</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.0ja4wy5148nbfk12mpyvq1r50uxv' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0ja4wy5148nbfk12mpyvq1r50uxv'>
+            <column aggregation='Sum' caption='Confirmed Cases' datatype='real' name='[ConfirmedCases]' role='dimension' type='ordinal' />
+            <column caption='Country Region' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Fatalities]' role='measure' type='quantitative' />
+            <column-instance column='[ConfirmedCases]' derivation='Max' name='[max:ConfirmedCases:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fatalities]' derivation='Max' name='[max:Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[none:Country_Region:nk]'>
+            <groupfilter expression='SUM([Fatalities]) &gt; 100.' function='filter' user:ui-filter-by-field='true' user:ui-marker='filter-by'>
+              <groupfilter function='level-members' level='[none:Country_Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[none:Country_Region:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:ConfirmedCases:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:Fatalities:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>([federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:Fatalities:qk] + [federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:ConfirmedCases:qk])</rows>
+        <cols>([federated.0ja4wy5148nbfk12mpyvq1r50uxv].[yr:Date:ok] / [federated.0ja4wy5148nbfk12mpyvq1r50uxv].[none:Country_Region:nk])</cols>
+      </table>
+      <simple-id uuid='{FDB5F804-9179-43A3-AB78-670705E43C49}' />
+    </worksheet>
+    <worksheet name='FW'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.0ja4wy5148nbfk12mpyvq1r50uxv' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0ja4wy5148nbfk12mpyvq1r50uxv'>
+            <column caption='Country Region' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' name='[Fatalities]' role='measure' type='quantitative' />
+            <column-instance column='[Fatalities]' derivation='Max' name='[max:Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[Longitude (generated)]' field-type='quantitative' max='-52292050.392482914' min='-106056016.78436205' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[Latitude (generated)]' field-type='quantitative' max='19771311.364518546' min='-11983238.942606363' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[none:Country_Region:nk]' />
+              <size column='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:Fatalities:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[Latitude (generated)]</rows>
+        <cols>[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{5337864F-7D9F-40F8-8FE6-C7714E01650E}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train.csv+ (Multiple Connections)' name='federated.0gtxtiz1ape5ha10oqz8b0i3kqg5' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gtxtiz1ape5ha10oqz8b0i3kqg5'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column aggregation='Sum' datatype='real' name='[Fatalities]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='real' name='[Outdoor ozone pollution (deaths per 100,000)]' role='dimension' type='ordinal' />
+            <column-instance column='[Fatalities]' derivation='Max' name='[max:Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Outdoor ozone pollution (deaths per 100,000)]' derivation='None' name='[none:Outdoor ozone pollution (deaths per 100,000):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <lod column='[federated.0gtxtiz1ape5ha10oqz8b0i3kqg5].[none:Country:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60000002384185791' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0gtxtiz1ape5ha10oqz8b0i3kqg5].[max:Fatalities:qk]</rows>
+        <cols>[federated.0gtxtiz1ape5ha10oqz8b0i3kqg5].[none:Outdoor ozone pollution (deaths per 100,000):ok]</cols>
+      </table>
+      <simple-id uuid='{6DA2DE9F-AF89-4D95-881E-A96EDA1013EB}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' name='FCW'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A10C203A-E98A-48BF-9D65-0A18DE1344F6}' />
+    </window>
+    <window class='worksheet' name='FW'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[max:Fatalities:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0ja4wy5148nbfk12mpyvq1r50uxv].[none:Country_Region:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5DF43DD3-47DB-4C5A-83A8-081329FFDC2F}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6A5BB64C-CBAA-40BA-ABB1-629137F185C6}' />
+    </window>
+  </windows>
+</workbook>
